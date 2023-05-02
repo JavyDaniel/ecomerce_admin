@@ -1,9 +1,12 @@
 import Link from "next/link";
+import {useRouter} from "next/router";
 
 export default function Nav() {
 
     const inactiveLink = 'flex gap-1 p-1';
     const activeLink = inactiveLink+' bg-white text-blue-900 rounded-l-lg';
+    const router =useRouter();
+    const {pathname} = router;
     return (
         <aside className={"text-white p-4 pr-0"}>
             <Link href={'/'} className={"flex gap-1 mb-4 mr-4"}>
@@ -20,7 +23,7 @@ export default function Nav() {
             </Link>
 
             <nav className={"flex flex-col gap-2"}>
-                <Link href={'/'} className={activeLink}>
+                <Link href={'/'} className={pathname === '/' ? activeLink:inactiveLink}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                         <path
                             d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"/>
@@ -30,7 +33,7 @@ export default function Nav() {
                     Inicio
                 </Link>
 
-                <Link href={'/'} className={inactiveLink}>
+                <Link href={'/Productos'} className={pathname.includes('/Productos') ? activeLink:inactiveLink}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                         <path
                             d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375z"/>
@@ -41,7 +44,7 @@ export default function Nav() {
                     Productos
                 </Link>
 
-                <Link href={'/'} className={inactiveLink}>
+                <Link href={'/Ordenes'} className={pathname.includes('/Ordenes') ? activeLink:inactiveLink}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                         <path
                             d="M5.625 3.75a2.625 2.625 0 100 5.25h12.75a2.625 2.625 0 000-5.25H5.625zM3.75 11.25a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5H3.75zM3 15.75a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75zM3.75 18.75a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5H3.75z"/>

@@ -1,12 +1,11 @@
 import Layout from "@/src/components/Layout";
 
-export default function Home() {
+export default function Ordenes() {
 
-
-    return (
+    return(
         <Layout>
-            Test
+            Ordenes
         </Layout>
-    )
+    );
 
 }

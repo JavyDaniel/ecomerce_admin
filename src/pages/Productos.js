@@ -1,12 +1,11 @@
 import Layout from "@/src/components/Layout";
 
-export default function Home() {
+export default function Productos() {
 
-
-    return (
+    return(
         <Layout>
-            Test
+            Productos
         </Layout>
-    )
+    );
 
 }
