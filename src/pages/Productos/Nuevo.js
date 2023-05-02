@@ -8,7 +8,8 @@ export default function Nuevo() {
     const [descripcion, setDescripcion] = useState('');
     const [precio, setPrecio] = useState('');
     
-    async function guardarProducto() {
+    async function guardarProducto(ev) {
+        ev.preventDefault();
         const data = {nombre,descripcion,precio}
         await axios.post('', data)
     }
